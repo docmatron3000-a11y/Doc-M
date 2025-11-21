@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc&Matron Consulting LLC - Enterprise Solutions & Technology Services</title>
+    <meta name="description" content="Professional consulting services across technology, transportation, and agriculture. Doc&Matron delivers integrated enterprise solutions.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0f172a;
+            --primary-green: #047857;
+            --accent-blue: #1e3a8a;
+            --accent-green: #065f46;
+            --dark-charcoal: #1f2937;
+            --medium-gray: #374151;
+            --light-gray: #f8fafc;
+            --white: #ffffff;
+            --gradient-blue: linear-gradient(135deg, #0f172a, #1e3a8a);
+            --gradient-green: linear-gradient(135deg, #047857, #065f46);
+            --text-primary: #0f172a;
+            --text-secondary: #374151;
+            --border-color: #e2e8f0;
+            --shadow-light: rgba(15, 23, 42, 0.1);
+            --shadow-medium: rgba(15, 23, 42, 0.15);
+            --shadow-dark: rgba(15, 23, 42, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-mark {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--accent-green);
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: var(--gradient-green);
+            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><polygon points="8,16 52,16 52,52 16,52 16,20 12,20 12,56 56,56 56,12 8,12"/></g></g></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-green);
+            color: white;
+            border: 2px solid var(--accent-green);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--shadow-dark);
+            background: var(--accent-green);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 0;
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                max-width: 100%;
+            }
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px var(--shadow-light);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-blue);
+        }
+
+        .service-card:nth-child(even)::before {
+            background: var(--gradient-green);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tech-icon { background: var(--gradient-blue); }
+        .courier-icon { background: var(--gradient-green); }
+        .transport-icon { background: var(--gradient-blue); }
+        .agri-icon { background: var(--gradient-green); }
+
+        .service-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 8rem 0;
+            background: var(--dark-charcoal);
+            color: var(--white);
+        }
+
+        .quote-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 968px) {
+            .quote-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .quote-content h2 {
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        .quote-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .quote-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.7rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .checkbox-item:hover {
+            background: var(--light-gray);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background: var(--light-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 6px 25px var(--shadow-light);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .contact-icon.email { background: var(--gradient-green); }
+        .contact-icon.phone { background: var(--gradient-blue); }
+
+        .contact-details h4 {
+            margin-bottom: 0.7rem;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .hero-container,
+            .container {
+                padding: 0 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Success/Error Messages */
+        .message {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            display: none;
+        }
+
+        .message.success {
+            background-color: #d1fae5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+
+        .message.error {
+            background-color: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading states */
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn.loading {
+            position: relative;
+        }
+
+        .btn.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            margin: auto;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-mark"></div>
+                <span class="logo-text">Doc&Matron</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#quote">Get Quote</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h1>Enterprise Solutions That Drive Results</h1>
+            <p class="hero-tagline">Technology • Transportation • Agriculture • Consulting</p>
+            <p class="hero-subtitle">Doc&Matron Consulting LLC delivers integrated solutions that optimize operations, reduce costs, and accelerate growth for forward-thinking enterprises.</p>
+            <div class="cta-buttons">
+                <a href="#quote" class="btn btn-primary">Request Consultation</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Enterprise Solutions</h2>
+                <p>We integrate cutting-edge technology with industry expertise to deliver measurable results across technology, logistics, and agricultural innovation sectors.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon tech-icon">⚡</div>
+                    <h3>Technology Consulting</h3>
+                    <p>Strategic digital transformation and enterprise systems integration. From cloud migration to AI implementation, we architect scalable solutions that align with your business objectives and deliver quantifiable ROI.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon courier-icon">📦</div>
+                    <h3>Courier & Logistics</h3>
+                    <p>Mission-critical delivery solutions and supply chain optimization for enterprises that demand reliability. Specialized transport services with real-time tracking and guaranteed delivery windows.</p>
+                </div>
+                <div class="service-card">
+                    <div name-icon transport-icon">🚚</div>
+                    <h3>Transportation Solutions</h3>
+                    <p>Fleet optimization and intelligent transportation management systems. Data-driven logistics strategies that reduce operational costs by up to 30% while improving delivery performance and customer satisfaction.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon agri-icon">🌱</div>
+                    <h3>AgTech Innovation</h3>
+                    <p>Precision agriculture technology and sustainable farming solutions. IoT sensors, automated systems, and data analytics that maximize yield while minimizing environmental impact and resource consumption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section" id="quote">
+        <div class="container">
+            <div class="quote-container">
+                <div class="quote-content">
+                    <h2>Ready to Transform Your Operations?</h2>
+                    <p>Get a comprehensive consultation and customized proposal for your enterprise needs. Our team will analyze your requirements and deliver a strategic roadmap within 48 hours.</p>
+                    <p>Trusted by Fortune 500 companies across banking, logistics, technology, and agriculture sectors for mission-critical projects.</p>
+                </div>
+                <div class="quote-form">
+                    <div id="quote-messages"></div>
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry Sector *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select your industry</option>
+                                <option value="banking">Banking & Financial Services</option>
+                                <option value="logistics">Logistics & Transportation</option>
+                                <option value="technology">Technology & Software</option>
+                                <option value="agriculture">Agriculture & Food Production</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="healthcare">Healthcare & Life Sciences</option>
+                                <option value="energy">Energy & Utilities</option>
+                                <option value="retail">Retail & E-commerce</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Services Required *</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="tech-consult" name="services" value="technology">
+                                    <label for="tech-consult">Technology Consulting</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="courier" name="services" value="courier">
+                                    <label for="courier">Courier & Logistics</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="transport" name="services" value="transportation">
+                                    <label for="transport">Transportation Solutions</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="agri-tech" name="services" value="agriculture">
+                                    <label for="agri-tech">AgTech Innovation</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Implementation Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="immediate">Immediate (1-2 weeks)</option>
+                                <option value="short">Short-term (1-3 months)</option>
+                                <option value="medium">Medium-term (3-6 months)</option>
+                                <option value="long">Long-term (6+ months)</option>
+                                <option value="ongoing">Ongoing Partnership</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Investment Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-25k">Under $25,000</option>
+                                <option value="25k-100k">$25,000 - $100,000</option>
+                                <option value="100k-500k">$100,000 - $500,000</option>
+                                <option value="500k-1m">$500,000 - $1,000,000</option>
+                                <option value="over-1m">Over $1,000,000</option>
+                                <option value="confidential">Confidential</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Requirements *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Please describe your business challenges, objectives, and specific requirements..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Business Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Direct Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (xxx) xxx-xxxx">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Consultation Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Our Enterprise Team</h2>
+                <p>Ready to discuss your enterprise needs? Our senior consultants are standing by to provide immediate assistance.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon location">📍</div>
+                        <div class="contact-details">
+                            <h4>Corporate Headquarters</h4>
+                            <!-- Updated company headquarters address to reflect the official corporate office -->
+                            <p>17350 State Hwy&nbsp;249, Ste&nbsp;220&nbsp;#22708<br>Houston, Texas&nbsp;77064<br>United States</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon email">✉️</div>
+                        <div class="contact-details">
+                            <h4>Business Inquiries</h4>
+                            <!-- Updated business contact email to the official address -->
+                            <p>THEDOC@DOCMATRON.COM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon phone">📞</div>
+                        <div class="contact-details">
+                            <h4>Direct Business Line</h4>
+                            <!-- Updated business phone number to the official company number -->
+                            <p>1-844-362-6629<br>Hours: 8:00 AM - 8:00 PM EST</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quote-form">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Direct Contact</h3>
+                    <div id="contact-messages"></div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name *</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Business Email *</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-company">Company Name</label>
+                            <input type="text" id="contact-company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject *</label>
+                            <select id="contact-subject" name="subject" required>
+                                <option value="">Select inquiry type</option>
+                                <option value="consultation">Free Consultation</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="support">Existing Client Support</option>
+                                <option value="media">Media & Press</option>
+                                <option value="careers">Career Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" rows="5" required placeholder="Please provide details about your inquiry..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo" style="margin-bottom: 1.5rem;">
+                        <div class="logo-mark"></div>
+                        <div>
+                            <div class="logo-text" style="color: white; font-size: 1.4rem;">DOC&MATRON</div>
+                            <div style="color: #047857; font-size: 0.9rem; font-weight: 500;">Consulting & Technology LLC</div>
+                        </div>
+                    </div>
+                    <p>Leading enterprise consulting firm delivering integrated technology, transportation, and agricultural solutions to Fortune 500 companies and growth-stage enterprises worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enterprise Services</h4>
+                    <p><a href="#services">Technology Consulting</a></p>
+                    <p><a href="#services">Courier & Logistics</a></p>
+                    <p><a href="#services">Transportation Solutions</a></p>
+                    <p><a href="#services">AgTech Innovation</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Business</h4>
+                    <p><a href="#quote">Enterprise Consultation</a></p>
+                    <p><a href="#contact">Partnership Inquiries</a></p>
+                    <p><a href="#contact">Case Studies</a></p>
+                    <p><a href="#contact">Investor Relations</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal & Compliance</h4>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Terms of Service</a></p>
+                    <p><a href="#">GDPR Compliance</a></p>
+                    <p><a href="#">SOC 2 Certification</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <!-- Updated licensing state to match the company's registered location -->
+                <p>&copy; 2025 Doc&Matron Consulting LLC. All rights reserved. | Enterprise solutions across technology, transportation, and agriculture sectors. | Licensed in Texas, USA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced form validation and submission
+        class FormHandler {
+            constructor() {
+                this.initializeForms();
+                this.setupEventListeners();
+            }
+
+            initializeForms() {
+                this.quoteForm = document.getElementById('quoteForm');
+                this.contactForm = document.getElementById('contactForm');
+                this.setupFormValidation();
+            }
+
+            setupEventListeners() {
+                // Smooth scrolling for navigation
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', this.smoothScroll.bind(this));
+                });
+
+                // Navbar scroll effect
+                window.addEventListener('scroll', this.handleNavbarScroll.bind(this));
+
+                // Form submissions
+                this.quoteForm.addEventListener('submit', this.handleQuoteSubmission.bind(this));
+                this.contactForm.addEventListener('submit', this.handleContactSubmission.bind(this));
+
+                // Mobile menu
+                document.querySelector('.mobile-menu-btn').addEventListener('click', this.toggleMobileMenu.bind(this));
+
+                // Intersection Observer for animations
+                this.setupAnimations();
+            }
+
+            smoothScroll(e) {
+                e.preventDefault();
+                const target = document.querySelector(e.target.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            handleNavbarScroll() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+                    navbar.style.boxShadow = '0 4px 25px rgba(15, 23, 42, 0.3)';
+                } else {
+                    navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                    navbar.style.boxShadow = 'none';
+                }
+            }
+
+            setupFormValidation() {
+                // Real-time validation for email fields
+                const emailInputs = document.querySelectorAll('input[type="email"]');
+                emailInputs.forEach(input => {
+                    input.addEventListener('blur', this.validateEmail.bind(this));
+                });
+
+                // Phone number formatting
+                const phoneInputs = document.querySelectorAll('input[type="tel"]');
+                phoneInputs.forEach(input => {
+                    input.addEventListener('input', this.formatPhoneNumber.bind(this));
+                });
+            }
+
+            validateEmail(e) {
+                const email = e.target.value;
+                const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                
+                if (email && !isValid) {
+                    e.target.style.borderColor = '#dc2626';
+                } else {
+                    e.target.style.borderColor = '#e2e8f0';
+                }
+            }
+
+            formatPhoneNumber(e) {
+                const value = e.target.value.replace(/\D/g, '');
+                const formattedValue = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                if (value.length === 10) {
+                    e.target.value = formattedValue;
+                }
+            }
+
+            handleQuoteSubmission(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this.quoteForm);
+                const services = [];
+                document.querySelectorAll('input[name="services"]:checked').forEach(checkbox => {
+                    services.push(checkbox.value);
+                });
+
+                // Enhanced validation
+                const validationResult = this.validateQuoteForm(formData, services);
+                
+                if (!validationResult.isValid) {
+                    this.showMessage('quote-messages', validationResult.message, 'error');
+                    return;
+                }
+
+                // Show loading state
+                const submitBtn = this.quoteForm.querySelector('button[type="submit"]');
+                this.setLoadingState(submitBtn, true);
+
+                // Simulate API call
+                setTimeout(() => {
+                    const serviceLabels = {
+                        'technology': 'Technology Consulting',
+                        'courier': 'Courier & Logistics',
+                        'transportation': 'Transportation Solutions',
+                        'agriculture': 'AgTech Innovation'
+                    };
+                    
+                    const selectedServices = services.map(service => serviceLabels[service]).join(', ');
+                    const companyName = formData.get('company');
+                    
+                    this.showMessage('quote-messages', 
+                        `Thank you, ${companyName}! Your consultation request for ${selectedServices} has been received. Our enterprise team will contact you within 24 hours with a comprehensive proposal.`, 
+                        'success');
+                    
+                    this.setLoadingState(submitBtn, false);
+                    this.quoteForm.reset();
+                }, 2000);
+            }
+
+            handleContactSubmission(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this.contactForm);
+                const validationResult = this.validateContactForm(formData);
+                
+                if (!validationResult.isValid) {
+                    this.showMessage('contact-messages', validationResult.message, 'error');
+                    return;
+                }
+
+                const submitBtn = this.contactForm.querySelector('button[type="submit"]');
+                this.setLoadingState(submitBtn, true);
+
+                setTimeout(() => {
+                    const name = formData.get('name');
+                    const subject = formData.get('subject');
+                    
+                    this.showMessage('contact-messages', 
+                        `Thank you, ${name}! Your ${subject.toLowerCase()} inquiry has been received. Our team will respond within 4 hours during business hours.`, 
+                        'success');
+                    
+                    this.setLoadingState(submitBtn, false);
+                    this.contactForm.reset();
+                }, 1500);
+            }
+
+            validateQuoteForm(formData, services) {
+                const company = formData.get('company').trim();
+                const industry = formData.get('industry');
+                const email = formData.get('email').trim();
+                const message = formData.get('message').trim();
+
+                if (!company) {
+                    return { isValid: false, message: 'Company name is required.' };
+                }
+
+                if (!industry) {
+                    return { isValid: false, message: 'Please select your industry sector.' };
+                }
+
+                if (services.length === 0) {
+                    return { isValid: false, message: 'Please select at least one service.' };
+                }
+
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    return { isValid: false, message: 'Please enter a valid business email address.' };
+                }
+
+                if (!message || message.length < 20) {
+                    return { isValid: false, message: 'Please provide detailed project requirements (minimum 20 characters).' };
+                }
+
+                return { isValid: true };
+            }
+
+            validateContactForm(formData) {
+                const name = formData.get('name').trim();
+                const email = formData.get('email').trim();
+                const subject = formData.get('subject');
+                const message = formData.get('message').trim();
+
+                if (!name) {
+                    return { isValid: false, message: 'Full name is required.' };
+                }
+
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    return { isValid: false, message: 'Please enter a valid email address.' };
+                }
+
+                if (!subject) {
+                    return { isValid: false, message: 'Please select an inquiry type.' };
+                }
+
+                if (!message || message.length < 10) {
+                    return { isValid: false, message: 'Please provide a detailed message (minimum 10 characters).' };
+                }
+
+                return { isValid: true };
+            }
+
+            showMessage(containerId, message, type) {
+                const container = document.getElementById(containerId);
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}`;
+                messageDiv.textContent = message;
+                
+                // Clear existing messages
+                container.innerHTML = '';
+                container.appendChild(messageDiv);
+                messageDiv.style.display = 'block';
+
+                // Auto-hide success messages
+                if (type === 'success') {
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 8000);
+                }
+
+                // Scroll to message
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            setLoadingState(button, isLoading) {
+                if (isLoading) {
+                    button.disabled = true;
+                    button.classList.add('loading');
+                    button.textContent = 'Processing...';
+                } else {
+                    button.disabled = false;
+                    button.classList.remove('loading');
+                    button.textContent = button.id === 'quoteForm' ? 'Submit Consultation Request' : 'Send Message';
+                }
+            }
+
+            toggleMobileMenu() {
+                const navLinks = document.querySelector('.nav-links');
+                const isVisible = navLinks.style.display === 'flex';
+                
+                if (isVisible) {
+                    navLinks.style.display = 'none';
+                } else {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.right = '0';
+                    navLinks.style.background = 'rgba(15, 23, 42, 0.98)';
+                    navLinks.style.padding = '1rem';
+                    navLinks.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.3)';
+                    navLinks.style.borderTop = '1px solid rgba(255, 255, 255, 0.1)';
+                }
+            }
+
+            setupAnimations() {
+                const observerOptions = {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fade-in-up');
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe service cards and contact items
+                document.querySelectorAll('.service-card, .contact-item').forEach(element => {
+                    observer.observe(element);
+                });
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            new FormHandler();
+        });
+
+        // Additional utility functions
+        window.docMatronUtils = {
+            // Scroll to top function
+            scrollToTop: () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            },
+
+            // Print page function
+            printPage: () => {
+                window.print();
+            },
+
+            // Share page function
+            shareUrl: async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'Doc&Matron Consulting LLC',
+                            text: 'Enterprise Solutions That Drive Results',
+                            url: window.location.href
+                        });
+                    } catch (err) {
+                        console.log('Error sharing:', err);
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>
